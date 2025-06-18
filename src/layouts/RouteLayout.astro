@@ -1,0 +1,74 @@
+---
+import Contact from "@components/Contact/Contact.astro";
+import RouteImage from "@components/RouteImage/RouteImage.astro";
+import RouteGrid from "@components/Route/RouteGrid.astro";
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+	route: CollectionEntry<"routes">;
+}
+
+
+
+const { route } = Astro.props as Props;
+const { title, description, heroImage } = route.data;
+
+// find other routes to show later down the page
+const otherRoutes = await getCollection("routes", (otherRoute) => {
+	// filter out draft pages
+	return otherRoute.data.draft !== true && otherRoute.id !== route.id;
+});
+---
+
+<BaseLayout
+	type="general"
+	title={title}
+	description={description}
+	heroImage={heroImage}
+	navStartStyle="white"
+>
+	<div class="relative h-[40svh] w-full overflow-hidden md:h-[60svh]">
+		<div class="absolute inset-0 z-10 bg-black/30"></div>
+
+		<Image
+		src={heroImage}
+		alt={`Header for ${title}`}
+		class="absolute inset-0 h-auto min-h-full w-full min-w-full object-cover md:hidden"
+		width={600}
+		densities={[1.5, 2]}
+		loading="eager"
+		/>
+		<Image
+		src={heroImage}
+		alt={`Header for ${title}`}
+		class="absolute inset-0 hidden h-auto min-h-full w-full min-w-full object-cover md:block"
+		width={1920}
+		densities={[1.5, 2]}
+		loading="eager"
+		/>
+
+	</div>
+
+	<article class="mx-auto mt-12 px-4 md:mt-20 md:max-w-6xl">
+		<h1 class="h1 description mt-4 text-center uppercase">
+			{title}
+		</h1>
+
+
+		<!-- slot really only fuctions as a longer description -->
+		<div class="markdown-content description mt-6 text-pretty md:text-lg">
+			<slot />
+		</div>
+
+	
+	</article>
+
+	<section class="mx-auto mt-12 px-4 md:mt-16 md:max-w-5xl">
+		<h3 class="h2 text-center">More Routes</h3>
+		<RouteGrid routes={otherRoutes} noTransitions />
+	</section>
+	<Contact class="mt-12" />
+</BaseLayout>

@@ -1,0 +1,29 @@
+/* buttons, 4 types "primary", "secondary", "outline", "ghost" */
+.button {
+	@apply font-heading-1 flex items-center justify-center rounded-none px-4 py-2 text-lg tracking-wide uppercase transition duration-200;
+	@apply active:opacity-80;
+	@apply disabled:pointer-events-none;
+}
+
+.button--primary {
+	@apply bg-primary-200 text-base-900;
+	@apply hover:bg-primary-200/80;
+	@apply focus-visible:ring-primary-300;
+}
+
+.button--secondary {
+	@apply border-2;
+	/* @apply hover:border-opacity-80; */
+	@apply focus-visible:ring-primary-200;
+}
+
+.button--outline {
+	@apply border-primary-200 text-base-900 border-2;
+	@apply hover:border-primary-200/80;
+	@apply focus-visible:ring-primary-200;
+}
+
+.button--ghost {
+	@apply text-base-800;
+	@apply hover:opacity-80;
+}

@@ -1,0 +1,63 @@
+---
+/**
+ * * Hero with background image
+ * You'll want a mobile image, and a desktop image for this.
+ */
+
+import Button from "@components/Button/Button.astro";
+import heroImage from "@images/hero-bg-min.jpg";
+import heroImageMobile from "@images/hero-bg-min.jpg";
+import { Image } from "astro:assets";
+---
+
+<section id="hero" class="relative z-10 flex min-h-[100lvh] w-full">
+	<!-- background image -->
+	<div class="absolute -z-10 h-full min-h-full w-full overflow-hidden">
+		<div class="absolute inset-0 bg-black/10"></div>
+
+		<Image
+			src={heroImage}
+			class="hidden h-auto min-h-full w-full object-cover object-bottom sm:block"
+			alt="wedding"
+			aria-hidden="true"
+			loading="eager"
+			height={1400}
+		/>
+		<Image
+			src={heroImageMobile}
+			class="h-auto min-h-full w-full object-cover sm:hidden"
+			alt="wedding"
+			aria-hidden="true"
+			loading="eager"
+			width={1200}
+		/>
+	</div>
+
+	<!-- hero items -->
+	<div class="site-container relative w-full gap-10 py-44 text-center md:py-52 md:text-left">
+		<!-- Hero text -->
+		<div class="text-base-50 my-auto mr-auto max-w-[800px] flex-col">
+			<h1
+				class="font-heading-1 text-4xl font-semibold text-pretty drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)] md:text-7xl md:leading-tight"
+			>
+				Global Travel Guide <br />
+			</h1>
+			<p
+				class="mt-8 text-lg tracking-widest text-pretty drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:max-w-[550px] md:text-2xl"
+			>
+				Discover authentic culture, food, and stories with locals.<br />
+
+			</p>
+			<div class="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
+				<Button
+					variant="ghost"
+					arrow="right"
+					href="/#contact"
+					class="pl-0 text-xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:text-3xl"
+				>
+					Get Custom Plan <br />
+				</Button>
+			</div>
+		</div>
+	</div>
+</section>

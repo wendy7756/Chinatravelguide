@@ -1,0 +1,184 @@
+/**
+ * * general styling for any markdown rendered content
+ * 
+ * Apply styling with the "markdown-content" class
+ * Cancel out the styling with the "not-content" class
+ */
+
+.markdown-content :not(:where(.not-content *)) {
+	line-height: 1.65;
+}
+
+/* text coloring for most items */
+.markdown-content
+	:not(pre *, .admonition *, details *, blockquote *, span, a, h1, h2, h3, h4, h5, h6):not(
+		:where(.not-content *)
+	) {
+	@apply text-base-900/85;
+}
+
+/* paragraph spacing except for paragraphs inside list items */
+.markdown-content p:not(li p):not(:where(.not-content *)) {
+	@apply mt-3;
+}
+
+/* Headings after non-headings have more spacing. */
+.markdown-content
+	:not(h1, h2, h3, h4, h5, h6)
+	+ :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+	@apply mt-10 mb-4;
+}
+
+.markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+	@apply text-base-900 font-heading-1 mt-2 mb-4 font-medium;
+}
+
+.markdown-content h1:not(:where(.not-content *)) {
+	@apply text-3xl font-medium md:text-4xl;
+}
+.markdown-content h2:not(:where(.not-content *)) {
+	@apply text-2xl font-medium md:text-3xl;
+}
+.markdown-content h3:not(:where(.not-content *)) {
+	@apply text-xl font-medium md:text-2xl;
+}
+.markdown-content h4:not(:where(.not-content *)) {
+	@apply text-lg font-medium md:text-xl;
+}
+.markdown-content h5:not(:where(.not-content *)) {
+	@apply text-base-900/80 font-medium md:text-lg;
+}
+.markdown-content h6:not(:where(.not-content *)) {
+	@apply text-base-900/80 font-medium md:text-lg;
+}
+
+/* anchor tags */
+.markdown-content a:not(:where(.not-content *)) {
+	@apply text-primary-700 hover:text-primary-800 underline transition-colors;
+}
+
+/* code */
+.markdown-content code:not(:where(.not-content *)) {
+	@apply bg-base-100 border-base-200 rounded-md border-2 border-solid px-0.5 py-0 font-mono;
+}
+.markdown-content :is(h1, h2, h3, h4, h5, h6) code {
+	@apply text-inherit;
+}
+
+/* code block styling */
+.markdown-content .expressive-code:not(:where(.not-content *)) {
+	@apply mt-4;
+}
+
+.markdown-content pre:not(:where(.not-content *)) {
+	@apply my-4 rounded-md border px-4 py-3;
+	tab-size: 2;
+	&::-webkit-scrollbar {
+		@apply h-1.5;
+	}
+	&::-webkit-scrollbar-track {
+		@apply mx-1.5 bg-transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		@apply bg-base-600 rounded-full;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		@apply bg-base-500;
+	}
+}
+
+/* reset styling for code blocks */
+.markdown-content pre code:not(:where(.not-content *)) {
+	all: unset;
+	@apply font-mono;
+}
+
+/* blockquotes */
+.markdown-content blockquote:not(:where(.not-content *)) {
+	@apply border-primary-700 border-l-4 pl-4 font-medium italic;
+}
+
+/* images, videos, etc */
+.markdown-content :is(img, picture, video, canvas, svg, iframe):not(:where(.not-content *)) {
+	@apply my-4 block h-auto w-full rounded-md;
+}
+
+/* italics */
+.markdown-content em:not(:where(.not-content *)) {
+	@apply text-base-900 italic;
+}
+
+/* bold */
+.markdown-content strong:not(:where(.not-content *)) {
+	@apply text-base-900 font-bold;
+}
+
+/* lists */
+.markdown-content li + li:not(:where(.not-content *)),
+.markdown-content dt + dt:not(:where(.not-content *)),
+.markdown-content dt + dd:not(:where(.not-content *)),
+.markdown-content dd + dd:not(:where(.not-content *)) {
+	@apply mt-0.5;
+}
+
+.markdown-content li:not(:where(.not-content *)) {
+	@apply pl-2;
+	overflow-wrap: anywhere;
+}
+
+.markdown-content :is(ul, ol):not(:where(.not-content *)) {
+	@apply my-4 mb-8 ml-6 list-outside space-y-2;
+}
+
+.markdown-content :is(ul):not(:where(.not-content *)) {
+	@apply list-disc;
+}
+
+.markdown-content :is(ol):not(:where(.not-content *)) {
+	@apply list-decimal;
+	::marker {
+		@apply text-base-900/60;
+	}
+}
+
+.markdown-content dt:not(:where(.not-content *)) {
+	@apply font-bold;
+}
+.markdown-content dd:not(:where(.not-content *)) {
+	@apply ps-4;
+}
+
+/* Table styling */
+.markdown-content table:not(:where(.not-content *)) {
+	@apply mb-4 overflow-auto;
+}
+.markdown-content :where(table):not(:where(.not-content *)) {
+	@apply w-full table-auto border-spacing-0 text-sm;
+}
+.markdown-content :is(th, td):not(:where(.not-content *)) {
+	@apply border-base-200 table-cell border-b px-4 py-2;
+	/* Align text to the top of the row in multiline tables. */
+	vertical-align: baseline;
+}
+.markdown-content :is(th:first-child, td:first-child):not(:where(.not-content *)) {
+	padding-inline-start: 0;
+}
+.markdown-content :is(th:last-child, td:last-child):not(:where(.not-content *)) {
+	padding-inline-end: 0;
+}
+.markdown-content th:not(:where(.not-content *)) {
+	@apply text-base-900 font-heading-1 font-medium;
+}
+/* Align headings to the start of the line unless set by the `align` attribute. */
+.markdown-content th:not([align]):not(:where(.not-content *)) {
+	text-align: start;
+}
+
+/* <table>s, and <hr>s inside admonitions */
+.markdown-content .admonition :is(th, td, hr):not(:where(.not-content *)) {
+	@apply border-base-200;
+}
+
+.markdown-content hr:not(:where(.not-content *)) {
+	@apply border-b-base-300 my-8 border-0 border-b-1;
+}

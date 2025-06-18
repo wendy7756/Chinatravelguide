@@ -1,0 +1,43 @@
+---
+/**
+ * * Contact section for the website
+ */
+
+import ContactForm from "@components/Forms/ContactForm.astro";
+import { Image } from "astro:assets";
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+
+import ringsImage from "@assets/images/rings-min.jpg";
+---
+
+<section
+	id="contact"
+	class="mx-auto max-w-md scroll-mt-10 px-4 py-8 md:max-w-6xl md:py-12"
+	class:list={[className]}
+>
+	<h2 class="h2 md:px-12 lg:text-6xl">Lets Talk!</h2>
+	<div class="grid gap-y-10 md:grid-cols-2">
+		<div class="border-primary-300 pt-8 md:border-r md:pr-20 md:pl-12">
+			<p class="description text-lg">
+				Whether you're looking for travel advice, a tailored itinerary, or a professional tour guide — feel free to reach out!
+			</p>
+			<div class="mx-auto mt-8 aspect-square overflow-hidden">
+				<Image
+					src={ringsImage}
+					alt="wedding rings"
+					width={450}
+					densities={[1.5, 2]}
+					class="h-full w-full object-cover"
+				/>
+			</div>
+		</div>
+		<div class="md:pr-12 md:pl-20">
+			<ContactForm />
+		</div>
+	</div>
+</section>

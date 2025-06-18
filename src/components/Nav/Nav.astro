@@ -1,0 +1,111 @@
+---
+import Button from "@components/Button/Button.astro";
+import MobileNav from "@components/Nav/MobileNav/MobileNav.astro";
+import NavDropdown from "@components/Nav/NavDropdown/NavDropdown.astro";
+import NavLink from "@components/Nav/NavLink.astro";
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import navData from "@config/navData.json";
+
+interface Props {
+	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
+	rest?: any; // catch-all for any additional parameters, such as "aria-label"
+}
+
+const { startStyle = "default", rest } = Astro.props as Props;
+---
+
+<div
+	id="nav__container"
+	class="initial fixed top-0 left-0 z-30 flex w-full flex-col py-2 transition-[padding,background-color] duration-300"
+	transition:name={`nav`}
+	{...rest}
+>
+	<div class="mx-auto flex w-full" class:list={[{ "text-base-900": startStyle === "default" }]}>
+		<div class="site-container flex h-16 w-full items-center">
+			<header class="flex w-full items-center gap-2">
+				<!-- home button / image -->
+				<div class="flex flex-auto justify-start">
+					<SiteLogo />
+				</div>
+
+				<!-- desktop nav menu -->
+				<div class="flex flex-auto justify-end lg:gap-4">
+					<nav class="hidden md:block">
+						<ul class="flex h-full items-center justify-center px-4 text-lg lg:gap-4">
+							{
+								// if dropdown exists, setup the dropdown, otherwise it is just a link
+								navData.map((navItem) =>
+									"dropdown" in navItem ? (
+										// non-mobile dropdown menu
+										<NavDropdown navItem={navItem} class="text-base-900" />
+									) : (
+										// normal nav link
+										<NavLink {navItem} class="h-10" />
+									),
+								)
+							}
+						</ul>
+					</nav>
+					<Button
+						variant="secondary"
+						class=`nav__cta py-1 my-auto hidden md:block ${startStyle === "white" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
+						href="/#contact"
+						data-scrolled="false"
+					>
+						Contact
+					</Button>
+
+					<!-- mobile nav menu, only load on small screens where it is visible -->
+					<div class="md:hidden">
+						<MobileNav />
+					</div>
+				</div>
+			</header>
+		</div>
+	</div>
+</div>
+
+<script>
+	let navbar: HTMLElement | null;
+	let navCTA: HTMLElement | null;
+
+	function scrollHandler() {
+		if (navbar) {
+			if (window.scrollY > 50) {
+				// if we have scrolled down the page a bit, adjust colors
+				navbar.classList.add("scrolled");
+				navbar.classList.remove("initial");
+				navCTA?.setAttribute("data-scrolled", "true");
+			} else {
+				navbar.classList.add("initial");
+				navbar.classList.remove("scrolled");
+				navCTA?.setAttribute("data-scrolled", "false");
+			}
+		}
+	}
+
+	function initNav() {
+		navbar = document.getElementById("nav__container");
+		navCTA = navbar?.querySelector(".nav__cta") as HTMLElement;
+		window.addEventListener("scroll", scrollHandler, { passive: true });
+	}
+
+	// runs on initial page load
+	initNav();
+
+	// runs on view transitions navigation. Not needed if item has "transition:persist"
+	document.addEventListener("astro:after-swap", initNav);
+</script>
+
+<style>
+	#nav__container.initial {
+		/* @apply text-white; */
+		color: white;
+	}
+
+	#nav__container.scrolled {
+		/* @apply bg-base-50 py-0; */
+		background-color: var(--color-base-50);
+		padding-block: 0;
+	}
+</style>

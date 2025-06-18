@@ -1,0 +1,48 @@
+---
+import Button from "@components/Button/Button.astro";
+
+interface Props {
+	prevUrl: string | undefined;
+	currPage: number;
+	nextUrl: string | undefined;
+	lastPage: number;
+}
+
+const { prevUrl, currPage, nextUrl, lastPage } = Astro.props as Props;
+---
+
+{
+	(prevUrl || nextUrl) && (
+		<nav aria-label="Blog pages navigation" class="w-full">
+			<div class="text-center">
+				<div class="btn-group flex w-full justify-between py-3 md:py-4">
+					{prevUrl && (
+						<Button variant="outline" arrow="left" href={prevUrl}>
+							Prev
+						</Button>
+					)}
+					{!prevUrl && (
+						<Button variant="outline" arrow="left" href={prevUrl} class="opacity-50" disabled>
+							Prev
+						</Button>
+					)}
+
+					<Button variant="primary" href="" disabled>
+						{currPage.toString()}
+					</Button>
+					{nextUrl && (
+						<Button variant="outline" arrow="right" href={nextUrl}>
+							Next
+						</Button>
+					)}
+
+					{!nextUrl && (
+						<Button variant="outline" arrow="right" href={nextUrl} class="opacity-50" disabled>
+							Next
+						</Button>
+					)}
+				</div>
+			</div>
+		</nav>
+	)
+}

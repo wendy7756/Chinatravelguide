@@ -1,0 +1,15 @@
+---
+import RouteCard from "@components/RouteCard/RouteCard.astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+interface Props {
+	routes: CollectionEntry<"routes">[];
+	noTransitions?: boolean;
+}
+
+const { routes, noTransitions = false } = Astro.props as Props;
+---
+
+<div class="grid gap-x-4 gap-y-10 pt-8 md:grid-cols-3 md:pt-12">
+	{routes.map((route) => <RouteCard route={route} direction="vertical" />)}
+</div>

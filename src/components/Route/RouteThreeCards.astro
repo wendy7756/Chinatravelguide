@@ -1,0 +1,38 @@
+---
+/**
+ * * This is a simplified Route section with 3 vertical cards
+ * All cards have consistent image sizes and vertical layout
+ */
+
+import Button from "@components/Button/Button.astro";
+import RouteCard from "@components/RouteCard/RouteCard.astro";
+import { getCollection } from "astro:content";
+
+const routes = await getCollection("routes");
+
+const sortedRoutes = routes.sort((a, b) => {
+	if (a.data.order < b.data.order) return -1;
+	if (a.data.order > b.data.order) return 1;
+	return 0;
+});
+
+const firstThreeRoutes = sortedRoutes.slice(0, 3);
+---
+
+<section id="route" class="site-container mt-12 scroll-mt-10 pt-8 md:pt-12 pb-4 md:pb-6">
+	<div class="mx-auto max-w-6xl text-center">
+		<h2 class="h2 text-pretty uppercase">
+			THEMED TRAVEL ROUTES BEYOND THE SCENERY. <br />
+		</h2>
+	</div>
+
+	<div class="grid gap-10 pt-10 md:grid-cols-3 md:items-stretch">
+		{firstThreeRoutes.map((route) => (
+			<RouteCard route={route} direction="vertical" noTransitions />
+		))}
+	</div>
+
+	<div class="mt-6 flex justify-center">
+		<Button href="/route" variant="outline">View all themes</Button>
+	</div>
+</section>

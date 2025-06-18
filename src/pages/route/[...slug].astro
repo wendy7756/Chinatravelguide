@@ -1,0 +1,26 @@
+---
+// layout
+import RouteLayout from "@layouts/RouteLayout.astro";
+import { type InferGetStaticPropsType } from "astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+	const routes = await getCollection("routes", ({ data }) => {
+		// filter out draft pages
+		return data.draft !== true;
+	});
+
+	return routes.map((route) => ({
+		params: { slug: route.id },
+		props: route,
+	}));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const route = Astro.props as Props;
+const { Content } = await render(route);
+---
+
+<RouteLayout route={route}>
+	<Content />
+</RouteLayout>

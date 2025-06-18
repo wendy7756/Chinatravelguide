@@ -1,0 +1,48 @@
+---
+import Button from "@components/Button/Button.astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	destination: CollectionEntry<"destinations">;
+	noTransitions?: boolean;
+}
+
+const { destination, noTransitions = false } = Astro.props as Props;
+const { title, description, heroImage } = destination.data;
+---
+
+<div class="flex flex-col gap-4 h-full">
+	<a href={`/destination/${destination.id}`} class="overflow-hidden w-full h-64">
+		{
+			noTransitions ? (
+				<Image
+					src={heroImage}
+					alt={title}
+					width={600}
+					densities={[1.5, 2, 3]}
+					class="w-full h-full object-cover"
+				/>
+			) : (
+				<Image
+					src={heroImage}
+					alt={title}
+					width={600}
+					densities={[1.5, 2, 3]}
+					class="w-full h-full object-cover"
+					transition:name={`destination-image-${destination.id}`}
+				/>
+			)
+		}
+	</a>
+
+	<div class="flex flex-col justify-between gap-2 flex-1">
+		<div class="flex-1 text-center">
+			<h3 class="h3 text-primary-500 tracking-widest">{title}</h3>
+			<p class="mt-2 text-sm lg:text-base">{description}</p>
+		</div>
+		<Button variant="ghost" arrow="right" href={`/destination/${destination.id}`} class="pl-0 mt-4">
+			View More
+		</Button>
+	</div>
+</div> 

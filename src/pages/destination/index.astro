@@ -1,0 +1,27 @@
+---
+// components
+import Contact from "@components/Contact/Contact.astro";
+import DestinationGrid from "@components/Destination/DestinationGrid.astro";
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+const destinations = await getCollection("destinations", ({ data }) => {
+	// filter out draft pages
+	return data.draft !== true;
+});
+---
+
+<BaseLayout title="Destinations" description="Explore popular destinations across China.">
+	<div class="site-container pt-24 md:pt-36">
+		<div class="mx-auto max-w-6xl text-center">
+			<h1 class="h2 text-pretty uppercase">
+				Popular Destinations <br />
+			</h1>
+		</div>
+		<DestinationGrid destinations={destinations} />
+	</div>
+
+	<Contact class="mt-12" />
+</BaseLayout> 

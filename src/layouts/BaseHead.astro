@@ -1,0 +1,52 @@
+---
+import Seo from "@components/Seo/Seo.astro";
+import siteData from "@config/siteData.json";
+import { type CollectionEntry } from "astro:content";
+import { ClientRouter } from "astro:transitions";
+
+export interface Props {
+	type?: "general" | undefined;
+	title: string;
+	description: string;
+	image?: ImageMetadata;
+	noindex?: boolean;
+}
+
+const { type = "general", title, description, image, noindex = false } = Astro.props as Props;
+
+import CinzelDecorative from "@fontsource/cinzel-decorative/files/cinzel-decorative-latin-400-normal.woff2";
+import PlayfairDisplayVariable from "@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2";
+import RalewayVariable from "@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2";
+import WorkSansVariable from "@fontsource-variable/work-sans/files/work-sans-latin-wght-normal.woff2";
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" initial-scale="1.0" />
+
+<!-- local font preload for better performance when not using ClientRouter -->
+<link rel="preload" href={WorkSansVariable} as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href={RalewayVariable} as="font" type="font/woff2" crossorigin="anonymous" />
+<link
+	rel="preload"
+	href={PlayfairDisplayVariable}
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+<link rel="preload" href={CinzelDecorative} as="font" type="font/woff2" crossorigin="anonymous" />
+
+<!-- Favicons. Generated from https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/favicons/site.webmanifest" />
+
+<!-- other -->
+<meta name="generator" content={Astro.generator} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<Seo type={type} title={title} description={description} image={image} noindex={noindex} />
+
+<!-- no fallback as I saw issues with firefox fallback -->
+{siteData.useViewTransitions && <ClientRouter fallback="none" />}

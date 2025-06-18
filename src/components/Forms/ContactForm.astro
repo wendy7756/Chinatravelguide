@@ -1,0 +1,48 @@
+---
+import Button from "@components/Button/Button.astro";
+---
+
+<form
+  action="https://formsubmit.co/wendy7756@outlook.com"
+  method="POST"
+  class="flex h-full flex-col justify-between gap-4"
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div>
+    <label for="contact-name" class="font-heading-1 text-lg uppercase">Your Name</label>
+    <input type="text" class="form__input" name="name" id="contact-name" required />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="contact-email" class="font-heading-1 text-lg uppercase">Contact E-mail</label>
+    <input
+      type="email"
+      class="form__input"
+      name="email"
+      id="contact-email"
+      inputmode="email"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="contact-date" class="font-heading-1 text-lg uppercase">Event Date</label>
+    <input type="date" class="form__input" name="date" id="contact-date" required />
+  </div>
+
+  <div>
+    <label for="contact-message" class="font-heading-1 text-lg uppercase">Message</label>
+    <textarea
+      name="message"
+      class="form__input"
+      id="contact-message"
+      rows="6"
+      required
+    ></textarea>
+  </div>
+
+  <div class="flex">
+    <Button variant="primary" type="submit" class="w-full px-10 md:w-fit">Submit</Button>
+  </div>
+</form>

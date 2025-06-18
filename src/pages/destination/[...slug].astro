@@ -1,0 +1,26 @@
+---
+// layout
+import DestinationLayout from "@layouts/DestinationLayout.astro";
+import { type InferGetStaticPropsType } from "astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+	const destinations = await getCollection("destinations", ({ data }) => {
+		// filter out draft pages
+		return data.draft !== true;
+	});
+
+	return destinations.map((destination) => ({
+		params: { slug: destination.id },
+		props: destination,
+	}));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const destination = Astro.props as Props;
+const { Content } = await render(destination);
+---
+
+<DestinationLayout destination={destination}>
+	<Content />
+</DestinationLayout> 

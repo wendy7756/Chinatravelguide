@@ -1,0 +1,24 @@
+---
+import About from "@components/About/About.astro";
+import Button from "@components/Button/Button.astro";
+import Contact from "@components/Contact/Contact.astro";
+import FeatureNumbers from "@components/Feature/FeatureNumbers.astro";
+// components
+import Hero from "@components/Hero/Hero.astro";
+import RouteThreeCards from "@components/Route/RouteThreeCards.astro";
+import DestinationThreeCards from "@components/Destination/DestinationThreeCards.astro";
+// data
+import siteData from "@config/siteData.json";
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
+	<Hero />
+	<FeatureNumbers />
+	<RouteThreeCards />
+	<DestinationThreeCards />
+	<About />
+	<Contact />
+</BaseLayout>

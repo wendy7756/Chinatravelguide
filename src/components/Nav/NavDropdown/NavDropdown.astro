@@ -1,0 +1,49 @@
+---
+import NavLink from "@components/Nav/NavLink.astro";
+import { type navDropdownItem } from "@config/navData.json";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	navItem: navDropdownItem;
+	class?: string;
+}
+
+const { navItem, class: className } = Astro.props as Props;
+---
+
+<!-- non-mobile dropdown menu -->
+<li class="dropdown group relative">
+	<button
+		class="nav__link--base flex h-10 items-center gap-1"
+		type="button"
+		aria-label={`${navItem.text} dropdown menu`}
+	>
+		{navItem.text}
+		<Icon name="tabler:chevron-down" aria-hidden="true" class="size-4" />
+	</button>
+	<div
+		class={`dropdown-content absolute transition-all top-[90%] invisible opacity-0 z-10 ${className}`}
+	>
+		<ul
+			class="border-primary-200 bg-base-50 mt-4 -ml-2 w-fit max-w-[18rem] min-w-[9rem] rounded-none border-2 border-solid p-2 drop-shadow-md"
+		>
+			{navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} />)}
+		</ul>
+	</div>
+</li>
+
+<style>
+	.dropdown {
+		/* when dropdown is hovered over (mouse) or focused (keyboard tabbing), open it with animation */
+		&:hover > .dropdown-content,
+		&:focus-within > .dropdown-content {
+			transition:
+				opacity 0.15s ease-out,
+				visibility 0.15s ease-out,
+				top 0.15s ease-out;
+			visibility: visible;
+			top: 100%;
+			opacity: 100%;
+		}
+	}
+</style>

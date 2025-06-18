@@ -1,0 +1,61 @@
+/**
+ * * Tailwind theme settings
+ * 
+ * These are in a separate file so it can be imported into <style> tags in .astro components
+ */
+@theme {
+	/* primary colors */
+	--color-primary-50: oklch(97.46% 0.0051 67.76);
+	--color-primary-100: oklch(94.4% 0.0115 84.58);
+	--color-primary-200: oklch(88.03% 0.0219 76.52);
+	--color-primary-300: oklch(80.1% 0.0376 73.97);
+	--color-primary-400: oklch(72.27% 0.0493 66.91);
+	--color-primary-500: oklch(64.12% 0.0623 60.4);
+	--color-primary-600: oklch(59.23% 0.0631 54.17);
+	--color-primary-700: oklch(51.67% 0.0543 49.61);
+	--color-primary-800: oklch(45.03% 0.0426 44.25);
+	--color-primary-900: oklch(39.63% 0.0349 45.6);
+	--color-primary-950: oklch(26.18% 0.0222 42.02);
+
+	/* base colors */
+	--color-base-50: oklch(97.31% 0 0);
+	--color-base-100: oklch(92.8% 0 0);
+	--color-base-200: oklch(86.07% 0 0);
+	--color-base-300: oklch(75.72% 0 0);
+	--color-base-400: oklch(62.68% 0 0);
+	--color-base-500: oklch(53.48% 0 0);
+	--color-base-600: oklch(47.84% 0 0);
+	--color-base-700: oklch(42.76% 0 0);
+	--color-base-800: oklch(39.04% 0 0);
+	--color-base-900: oklch(33.29% 0 0);
+	--color-base-950: oklch(26.86% 0 0);
+
+	/* other colors */
+	--color-info: var(--color-sky-300);
+	--color-info-foreground: var(--color-sky-950);
+	--color-success: var(--color-green-300);
+	--color-success-foreground: var(--color-green-950);
+	--color-warning: var(--color-amber-300);
+	--color-warning-foreground: var(--color-amber-950);
+	--color-error: var(--color-red-700);
+	--color-error-foreground: var(--color-base-50);
+
+	/* layout settings */
+	--breakpoint-xs: 400px;
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+	--breakpoint-2xl: 1536px;
+
+	/* font families */
+	--font-fallback:
+		"-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif",
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-sans: "Work Sans Variable", var(--font-fallback);
+	--font-heading-1: "Playfair Display Variable", var(--font-serif);
+	--font-heading-2: "Raleway Variable", var(--font-fallback);
+	--font-decorative: "Cinzel Decorative", "Playfair Display Variable", var(--font-serif);
+	--font-mono:
+		"SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace";
+}

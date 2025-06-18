@@ -1,0 +1,47 @@
+{
+	"name": "horizon",
+	"type": "module",
+	"version": "2.1.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "eslint . --fix && prettier -w \"**/*\" --ignore-unknown --cache",
+		"lint": "eslint ."
+	},
+	"dependencies": {
+		"@astrojs/mdx": "4.2.6",
+		"@astrojs/rss": "4.0.11",
+		"@astrojs/sitemap": "3.3.1",
+		"@fontsource-variable/playfair-display": "5.2.5",
+		"@fontsource-variable/raleway": "5.2.5",
+		"@fontsource-variable/work-sans": "5.2.5",
+		"@fontsource/cinzel-decorative": "5.2.5",
+		"@iconify-json/tabler": "1.2.17",
+		"@tailwindcss/forms": "0.5.10",
+		"@tailwindcss/vite": "4.1.5",
+		"astro": "5.7.12",
+		"astro-auto-import": "0.4.4",
+		"astro-icon": "1.1.5",
+		"astro-seo": "0.8.4",
+		"tailwindcss": "4.1.5"
+	},
+	"devDependencies": {
+		"@eslint/js": "9.26.0",
+		"@playform/compress": "0.1.9",
+		"eslint": "9.26.0",
+		"eslint-plugin-astro": "1.3.1",
+		"eslint-plugin-jsx-a11y": "6.10.2",
+		"eslint-plugin-prettier": "5.4.0",
+		"eslint-plugin-simple-import-sort": "12.1.1",
+		"globals": "16.1.0",
+		"prettier-plugin-astro": "0.14.1",
+		"prettier-plugin-tailwindcss": "0.6.11",
+		"typescript-eslint": "8.32.0"
+	},
+	"overrides": {
+		"sharp": "^0.33.0"
+	}
+}

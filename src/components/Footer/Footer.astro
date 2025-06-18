@@ -1,0 +1,42 @@
+---
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import siteData from "@config/siteData.json";
+import { Icon } from "astro-icon/components";
+
+import FooterLink from "./FooterLink.astro";
+
+const today = new Date();
+---
+
+<footer class="bg-base-100/40 mt-12 flex flex-col items-center justify-center py-8">
+	<div class="site-container">
+
+		<!-- lets connect -->
+		<div class="description mx-auto mt-6 max-w-[21rem] px-4 text-center">
+			<p>
+				<span class="italic">Let's connect!</span>
+				<a
+					href="https://t.me/ChinaTravelwendy"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-primary-600 hover:underline ml-1"
+				>
+					Join Telegram
+				</a>
+				for more travel tips and stories.
+			</p>
+		</div>
+
+		<!-- copyright -->
+		<div class="mt-4 mb-2 text-center text-sm opacity-80">
+			&copy; {today.getFullYear()} by
+			<a
+				class="hover:text-primary-600 transition"
+				target="_blank"
+				rel="noopener"
+			>
+				WENDY
+			</a>
+		</div>
+	</div>
+</footer>

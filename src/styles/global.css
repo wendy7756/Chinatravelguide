@@ -1,0 +1,87 @@
+@import url("./fonts.css");
+
+@import "tailwindcss";
+
+/* tailwind plugins */
+@plugin "@tailwindcss/forms";
+
+/* theme definition import */
+@import "./tailwind-theme.css";
+
+/* other imports into specific layers */
+@import "./markdown-content.css" layer(components);
+@import "./buttons.css" layer(components);
+
+/* https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
+@layer base {
+	:root {
+		/* default font */
+		font-family: var(--font-sans);
+	}
+
+	/* starwind preflight merged with Cosmic Themes */
+	* {
+		@apply border-base-200 outline-none;
+	}
+	*:focus-visible {
+		@apply ring-primary-300 rounded-none ring-2 transition-none outline-none;
+	}
+	html {
+		@apply bg-base-100 text-base-900 leading-[1.6rem] scheme-light;
+		scroll-behavior: smooth;
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+	}
+	button {
+		@apply cursor-pointer;
+	}
+}
+
+@layer components {
+	.h1 {
+		@apply font-heading-1 text-4xl font-semibold lg:text-5xl;
+	}
+
+	.h2 {
+		@apply font-heading-1 text-2xl leading-tight tracking-wide uppercase md:text-[2.5rem] md:leading-tight;
+	}
+
+	.h3 {
+		@apply font-heading-2 text-lg leading-tight font-medium tracking-widest uppercase md:text-2xl md:leading-tight;
+	}
+
+	.description {
+		@apply text-base-700;
+	}
+
+	.site-container {
+		@apply mx-auto max-w-[74rem] px-4;
+	}
+
+	/* used for various form inputs */
+	.form__label {
+		@apply text-base-800 dark:text-base-200;
+	}
+
+	.form__input {
+		@apply border-primary-300 text-base-900 placeholder-base-500 w-full rounded-none border bg-transparent px-4 py-2 transition duration-200 outline-none;
+		@apply focus:border-primary-400 focus-visible:border-primary-400 focus:ring-0 focus:outline-none focus-visible:outline-none;
+	}
+
+	/* styles navbar links */
+	.nav__link--base {
+		@apply font-heading-1 px-4 py-2 tracking-wide uppercase transition duration-200 hover:opacity-80;
+	}
+}
+
+@layer utilities {
+	/* main gradient. Used for categories and some headings */
+	.main-text-gradient {
+		@apply bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent;
+	}
+
+	.rotate-180 {
+		@apply rotate-180;
+	}
+}

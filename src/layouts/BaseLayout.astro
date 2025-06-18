@@ -1,0 +1,49 @@
+---
+import "@/styles/global.css";
+
+import Footer from "@components/Footer/Footer.astro";
+import Nav from "@components/Nav/Nav.astro";
+import BaseHead from "@layouts/BaseHead.astro";
+
+// heroImage and authorData are defined on blog posts
+// authorData could also be defined on the about author page
+interface Props {
+	type?: "general";
+	navStartStyle?: "default" | "white";
+	title: string;
+	description: string;
+	heroImage?: ImageMetadata;
+	noindex?: boolean; // you need to opt-in to no indexing, as it hides the page from search engines
+}
+
+const {
+	type = "general",
+	navStartStyle = "default",
+	title,
+	description,
+	heroImage,
+	noindex = false,
+} = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en" transition:animate="fade">
+	<head>
+		<BaseHead
+			type={type}
+			title={title}
+			description={description}
+			image={heroImage ? heroImage : undefined}
+			noindex={noindex}
+		/>
+	</head>
+	<body id="body" class="bg-base-50 text-base-900">
+		<div class="min-h-[100lvh]">
+			<Nav startStyle={navStartStyle} />
+			<main>
+				<slot />
+			</main>
+		</div>
+		<Footer />
+	</body>
+</html>

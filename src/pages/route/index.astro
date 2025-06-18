@@ -1,0 +1,29 @@
+---
+// components
+import Contact from "@components/Contact/Contact.astro";
+import RouteGrid from "@components/Route/RouteGrid.astro";
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+const routes = await getCollection("routes", ({ data }) => {
+	// filter out draft pages
+	return data.draft !== true;
+});
+---
+
+<BaseLayout title="Routes" description="Route page for my projects and work.">
+	<div class="site-container pt-24 md:pt-36">
+		<div class="mx-auto max-w-6xl text-center">
+			<h1 class="h2 text-pretty uppercase">
+				Themed travel routes beyond the scenery. <br />
+			</h1>
+		</div>
+		<RouteGrid routes={routes} />
+	</div>
+
+
+
+	<Contact class="mt-12" />
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	image: ImageMetadata;
+	numCols: number;
+}
+
+const { image, numCols } = Astro.props as Props;
+
+const maxWidth = 1120;
+const width = maxWidth / numCols;
+---
+
+<div class="h-full w-full max-w-6xl">
+	<Image
+		src={image}
+		alt="route image"
+		width={width}
+		quality="high"
+		densities={[1.5, 2]}
+		class="h-auto min-h-full w-full min-w-full object-cover"
+	/>
+</div>

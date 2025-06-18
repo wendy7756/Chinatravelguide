@@ -1,0 +1,40 @@
+---
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { type InferGetStaticPropsType } from "astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+	const otherPages: CollectionEntry<"otherPages">[] = await getCollection(
+		"otherPages",
+		({ data }) => {
+			// filter out draft pages
+			return data.draft !== true;
+		},
+	);
+	return otherPages.map((page) => ({
+		params: { page: page.id },
+		props: page,
+	}));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const page = Astro.props as Props;
+
+// convert markdown to html
+const { Content } = await render(page);
+const { title, description } = page.data;
+---
+
+<BaseLayout title={title} description={description}>
+	<section class="mx-auto max-w-3xl px-4 pt-24 md:pt-36">
+		<h1 class="h1 description text-center">
+			{title}
+		</h1>
+		<div
+			class="text-base-content markdown-content mt-8 max-w-none text-sm md:mt-12 md:px-8 md:text-base"
+		>
+			<Content />
+		</div>
+	</section>
+</BaseLayout>

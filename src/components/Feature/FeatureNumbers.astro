@@ -1,0 +1,53 @@
+---
+/**
+ * * This is a section with four number cards that show some stats about the business.
+ * You can update the data below to change the stats.
+ */
+
+import FeatureCardNumbers from "@components/FeatureCard/FeatureCardNumbers.astro";
+
+interface FeatureCardData {
+	largeText: string;
+	description: string;
+}
+
+// NOTE: You still need to manually update the heading that come before the cards
+const featureData: FeatureCardData[] = [
+	{
+		largeText: "190+",
+		description: `Countries & Regions`,
+	},
+	{
+		largeText: "7",
+		description: `Continents`,
+	},
+	{
+		largeText: "10K+",
+		description: `Destinations`,
+	},
+	{
+		largeText: "∞",
+		description: `Travel Experiences`,
+	},
+];
+---
+
+<section id="feature-numbers" class="bg-base-100 scroll-mt-10 py-8 md:py-12">
+	<div class="mx-auto max-w-6xl px-4">
+		<div class="text-prety mr-auto text-center">
+			<h2 class="h2">Explore the diversity, stories, and wonders of our planet.  
+One world. Infinite journeys.</h2>
+		</div>
+
+		<div
+			id="feature-numbers-cards"
+			class="mt-6 grid gap-10 gap-y-16 sm:grid-cols-2 md:mt-12 lg:grid-cols-4"
+		>
+			{
+				featureData.map((feature, idx) => (
+					<FeatureCardNumbers largeText={feature.largeText} description={feature.description} />
+				))
+			}
+		</div>
+	</div>
+</section>
