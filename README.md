@@ -6,7 +6,7 @@ Whether you're a traveler, digital nomad, or local explorer, you can **publish y
 
 🌐 Live site: [https://localtravelguide.fun](https://localtravelguide.fun)
 
-![image](https://github.com/user-attachments/assets/171f0c13-06e3-441f-911d-cd7d1e0b927f)
+![image](https://github.com/user-attachments/assets/8fe5cd67-e8c9-44c5-bbb4-8148b6a5ca76)
 
 ---
 
