@@ -60,16 +60,24 @@ The maintainers reserve the right to remove any content at their discretion.
 ---
 
 ## 📁 Project Structure
-.
-├── public/             # Static assets (images, favicons)
-├── src/
-│   ├── pages/          # Route-based content (guides, index)
-│   ├── components/     # UI components (Hero, layout blocks)
-│   ├── layouts/        # Page templates
-│   ├── data/           # Structured data (JSON/TS content)
-│   └── styles/         # Global styles
-├── package.json        # NPM dependencies
-└── astro.config.mjs    # Astro config
+<pre>
+
+    \`\`\`
+    ## 📁 Project Structure
+    .
+    ├── public/          # Static assets (images, favicons)
+    ├── src/
+    │   ├── pages/       # Route-based content (guides, index)
+    │   ├── components/  # UI components (Hero, layout blocks)
+    │   ├── layouts/     # Page templates
+    │   ├── data/        # Structured data (content: routes, destinations)
+    │   └── styles/      # Global styles
+    ├── package.json     # NPM dependencies
+    └── astro.config.mjs # Astro config
+    \`\`\`
+
+</pre>
+
 
 ---
 
