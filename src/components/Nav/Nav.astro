@@ -5,6 +5,7 @@ import NavDropdown from "@components/Nav/NavDropdown/NavDropdown.astro";
 import NavLink from "@components/Nav/NavLink.astro";
 import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
 import navData from "@config/navData.json";
+import { Icon } from "astro-icon/components";
 
 interface Props {
 	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.
@@ -29,7 +30,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 				</div>
 
 				<!-- desktop nav menu -->
-				<div class="flex flex-auto justify-end lg:gap-4">
+				<div class="flex flex-auto justify-end lg:gap-4 items-center">
 					<nav class="hidden md:block">
 						<ul class="flex h-full items-center justify-center px-4 text-lg lg:gap-4">
 							{
@@ -46,6 +47,19 @@ const { startStyle = "default", rest } = Astro.props as Props;
 							}
 						</ul>
 					</nav>
+					
+					<!-- GitHub link -->
+					<a
+						href="https://github.com/wendy7756/globaltravelguide"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hidden md:flex items-center justify-center w-10 h-10 rounded-md hover:bg-base-100/10 transition-colors duration-200"
+						title="Star on GitHub"
+						aria-label="GitHub repository"
+					>
+						<Icon name="socials/mdi-github" class="w-5 h-5"/>
+					</a>
+
 					<Button
 						variant="secondary"
 						class=`nav__cta py-1 my-auto hidden md:block ${startStyle === "white" ? "data-[scrolled=true]:border-primary-200 data-[scrolled=true]:hover:border-primary-200/80" : "border-primary-200"}`
