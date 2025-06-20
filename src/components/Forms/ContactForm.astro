@@ -46,3 +46,21 @@ import Button from "@components/Button/Button.astro";
     <Button variant="primary" type="submit" class="w-full px-10 md:w-fit">Submit</Button>
   </div>
 </form>
+
+<script>
+  // Set today's date as default value
+  function setTodayAsDefault() {
+    const dateInput = document.getElementById('contact-date');
+    if (dateInput && !dateInput.value) {
+      const today = new Date();
+      const formattedDate = today.toISOString().split('T')[0];
+      dateInput.value = formattedDate;
+    }
+  }
+
+  // Initialize on page load
+  setTodayAsDefault();
+
+  // Re-initialize on view transitions
+  document.addEventListener('astro:after-swap', setTodayAsDefault);
+</script>
