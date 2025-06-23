@@ -57,12 +57,10 @@ const otherRoutes = await getCollection("routes", (otherRoute) => {
 			{title}
 		</h1>
 
-
 		<!-- slot really only fuctions as a longer description -->
 		<div class="markdown-content description mt-6 text-pretty md:text-lg">
 			<slot />
 		</div>
-
 	
 	</article>
 
@@ -70,5 +68,6 @@ const otherRoutes = await getCollection("routes", (otherRoute) => {
 		<h3 class="h2 text-center">More Routes</h3>
 		<RouteGrid routes={otherRoutes} noTransitions />
 	</section>
+	
 	<Contact class="mt-12" />
 </BaseLayout>

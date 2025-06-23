@@ -85,16 +85,52 @@ The maintainers reserve the right to remove any content at their discretion.
 
 Clone the repo and run locally:
 
+```bash
 git clone https://github.com/wendy7756/travelguide.git
+cd travelguide
 npm install
-npm run dev
 
+# Configure environment variables (optional)
+cp .env.example .env
+# Edit .env file to add your Google AdSense client ID
+
+npm run dev
+```
 
 Build for production:
+```bash
 npm run build
+```
 
 Preview build locally:
+```bash
 npm run preview
+```
+
+## 💰 Google AdSense Configuration (Optional)
+
+This project supports Google AdSense integration for monetization. If you want to enable ads:
+
+1. **Get your AdSense Client ID**:
+   - Sign up at [Google AdSense](https://www.google.com/adsense/)
+   - Get your publisher ID (format: `ca-pub-XXXXXXXXXXXXXXXX`)
+
+2. **Configure Environment Variables**:
+   ```bash
+   cp .env.example .env
+   ```
+   
+3. **Edit `.env` file**:
+   ```
+   PUBLIC_ADSENSE_CLIENT=ca-pub-YOUR-ADSENSE-ID
+   ```
+
+4. **Deploy and Verify**:
+   - Deploy your site
+   - Verify site ownership in AdSense dashboard
+   - Enable Auto Ads in your AdSense account
+
+> **⚠️ Important for Open Source**: The `.env` file is gitignored to prevent sharing your AdSense ID. Each developer should configure their own AdSense account.
 
 📜 License
 

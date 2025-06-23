@@ -46,6 +46,19 @@ import WorkSansVariable from "@fontsource-variable/work-sans/files/work-sans-lat
 <meta name="generator" content={Astro.generator} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
+<!-- Google AdSense Auto Ads -->
+{import.meta.env.PUBLIC_ADSENSE_CLIENT && (
+  <>
+    <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${import.meta.env.PUBLIC_ADSENSE_CLIENT}`} crossorigin="anonymous"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: import.meta.env.PUBLIC_ADSENSE_CLIENT,
+        enable_page_level_ads: true
+      });
+    </script>
+  </>
+)}
+
 <Seo type={type} title={title} description={description} image={image} noindex={noindex} />
 
 <!-- no fallback as I saw issues with firefox fallback -->
