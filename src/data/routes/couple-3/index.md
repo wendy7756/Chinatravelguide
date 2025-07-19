@@ -1,9 +1,24 @@
 ---
-title: China’s Silk Road Route
-description: A historic adventure through China’s legendary trade route, rich in sceneries and stories.
+title: China's Silk Road Route
+description: A historic adventure through China's legendary trade route, rich in sceneries and stories.
 heroImage: ./r3-silk.jpg
-
 order: 3
+# Tour Information
+subtitle: "Embark on the ultimate Silk Road adventure - From ancient capitals to desert oases along history's most legendary trade route"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "18 days, 17 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Xi'an Terracotta Warriors, Zhangye Danxia, Jiayuguan Pass, Dunhuang Mogao Caves, Turpan Jiaohe Ruins, Kashgar Old Town"
+price: "$4,500"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/routes/couple-3/r3-dunhuang.jpg",
+  "/images/routes/couple-3/r3-xian.jpg", 
+  "/images/routes/couple-3/r3-zhangye.jpg"
+]
 ---
 
 This route follows China’s legendary Silk Road, where merchants, monks, and explorers once crossed empires to trade silk, spices, and stories. From the imperial capital Xi’an to the desert gates of Kashgar, this journey connects history with breathtaking landscapes. <br>

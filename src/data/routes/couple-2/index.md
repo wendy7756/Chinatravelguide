@@ -1,8 +1,24 @@
 ---
-title: Spotlight on Jiangsu’s 13 Cities
-description: A cultural journey across Jiangsu’s 13 cities—highlighting heritage, cuisine, and local rivalry.
+title: Spotlight on Jiangsu's 13 Cities
+description: A cultural journey across Jiangsu's 13 cities—highlighting heritage, cuisine, and local rivalry.
 heroImage: ./r2-football.jpg
 order: 2
+# Tour Information
+subtitle: "Uncover the cultural treasures of Jiangsu - Where ancient gardens, modern innovation, and culinary excellence converge"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "12 days, 11 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Nanjing Sun Yat-sen Mausoleum, Suzhou Classical Gardens, Changzhou Tianning Temple, Wuxi Grand Buddha, Yangzhou Slender West Lake, Xuzhou Han Terracotta Warriors"
+price: "$2,800"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/routes/couple-2/r2-nanjing.jpg",
+  "/images/routes/couple-2/r2-suzhou.jpg", 
+  "/images/routes/couple-2/r2-wuxi.jpg"
+]
 ---
   
 Weaving through Jiangsu’s historic cities—each known for unique attractions, local dishes, and competitive spirit. <br>

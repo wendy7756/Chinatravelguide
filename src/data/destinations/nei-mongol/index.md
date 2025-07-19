@@ -9,6 +9,22 @@ features:
   - "Hulunbuir Grasslands – Among the world's largest grasslands; ideal for horse riding and yurts."
   - "Xiangshawan & Kubuqi Desert – Sandboarding, camel rides, and golden dunes."
   - "Naadam Festival – Celebrate with traditional sports: horse racing, wrestling, and archery."
+# Tour Information
+subtitle: "Experience the freedom of endless grasslands - Where nomadic traditions meet modern luxury in the heart of Mongolia"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "5 days, 4 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Hulunbuir Grasslands, Xiangshawan Desert, Naadam Festival, Yurt Stays, Horse Riding, Mongolian Cuisine"
+price: "$1,200"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/destinations/nei-mongol/nei-mongol-01.jpg",
+  "/images/destinations/nei-mongol/nei-mongol-02.jpg", 
+  "/images/destinations/nei-mongol/nei-mongol-03.jpg"
+]
 ---
 
 Inner Mongolia (Nei Mongol) stretches across China's northern frontier, offering endless grasslands, desert adventures, and authentic nomadic culture. Experience the traditional Mongolian way of life while enjoying some of the most pristine natural landscapes in China.

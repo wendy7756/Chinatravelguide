@@ -1,6 +1,9 @@
 ---
 import Contact from "@components/Contact/Contact.astro";
 import DestinationGrid from "@components/Destination/DestinationGrid.astro";
+import TourInfo from "@components/TourInfo/TourInfo.astro";
+import Banner from "@components/Banner/Banner.astro";
+import FloatingButtons from "@components/FloatingButtons/FloatingButtons.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 
@@ -11,13 +14,20 @@ interface Props {
 }
 
 const { destination } = Astro.props as Props;
-const { title, description, heroImage } = destination.data;
+const { title, description, heroImage, subtitle, tourType, guideDriver, duration, hotel, attractions, price, whatsappNumber, whatsappBusinessLink, bannerImages } = destination.data;
 
 // find other destinations to show later down the page
 const otherDestinations = await getCollection("destinations", (otherDestination) => {
 	// filter out draft pages
 	return otherDestination.data.draft !== true && otherDestination.id !== destination.id;
 });
+
+// 使用目的地特定的Banner图片，如果没有则使用默认图片
+const bannerImageList = bannerImages || [
+	"/images/cosmic-themes-logo 20.36.33.png",
+	"/images/cosmic-themes-logo 20.36.33.png",
+	"/images/cosmic-themes-logo 20.36.33.png"
+];
 ---
 
 <BaseLayout
@@ -50,20 +60,50 @@ const otherDestinations = await getCollection("destinations", (otherDestination)
 	</div>
 
 	<article class="mx-auto mt-12 px-4 md:mt-20 md:max-w-6xl">
-		<h1 class="h1 description mt-2 text-center uppercase">
+		<h1 class="h1 text-black mt-4 text-center uppercase">
 			{title}
 		</h1>
+
+		{subtitle && (
+			<div class="mt-6 mb-8">
+				<p class="text-lg font-heading-1 mt-4 text-center font-bold">
+					{subtitle}
+				</p>
+			</div>
+		)}
+
+		<!-- Tour Information Section -->
+		<TourInfo 
+			tourType={tourType}
+			guideDriver={guideDriver}
+			duration={duration}
+			hotel={hotel}
+			attractions={attractions}
+			price={price}
+			whatsappNumber={whatsappNumber}
+			whatsappBusinessLink={whatsappBusinessLink}
+		/>
+
+		<!-- Banner Section -->
+		<Banner 
+			images={bannerImageList}
+			alt="Travel destination highlights"
+		/>
 
 		<!-- slot really only fuctions as a longer description -->
 		<div class="markdown-content description mt-6 text-pretty md:text-lg">
 			<slot />
 		</div>
+	
 	</article>
 
 	<section class="mx-auto mt-12 px-4 md:mt-16 md:max-w-5xl">
 		<h3 class="h2 text-center">More Destinations</h3>
-		<DestinationGrid destinations={otherDestinations} />
+		<DestinationGrid destinations={otherDestinations} noTransitions />
 	</section>
 	
 	<Contact class="mt-12" />
+
+	<!-- Floating Buttons -->
+	<FloatingButtons whatsappLink={whatsappBusinessLink} />
 </BaseLayout> 

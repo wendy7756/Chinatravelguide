@@ -9,6 +9,22 @@ features:
   - "Potala Palace – A majestic structure perched above Lhasa; a spiritual landmark."
   - "Mount Everest (Qomolangma) – The highest point on Earth, a dream for climbers and pilgrims."
   - "Namtso Lake – The \"Lake of the Sky\", one of Tibet's four sacred lakes."
+# Tour Information
+subtitle: "Journey to the Roof of the World - Where spirituality meets breathtaking landscapes in the highest place on Earth"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "10 days, 9 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Potala Palace, Mount Everest Base Camp, Namtso Lake, Jokhang Temple, Barkhor Street, Sera Monastery"
+price: "$2,500"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/destinations/tibet/tibet01.jpg",
+  "/images/destinations/tibet/tibet02.jpg", 
+  "/images/destinations/tibet/tibet03.jpg"
+]
 ---
 
 Tibet, known as the "Roof of the World," is a mystical land of sacred mountains, pristine lakes, and profound spirituality. This autonomous region offers travelers an unforgettable journey through ancient Buddhist culture and breathtaking natural landscapes.

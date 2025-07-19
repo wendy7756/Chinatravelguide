@@ -1,8 +1,24 @@
 ---
-title: IShowSpeed’s China Route
+title: IShowSpeed's China Route
 description: A fun, youthful route that merges memes, markets, and must-sees.
 heroImage: ./r1-ispeedshow.jpg
 order: 1
+# Tour Information
+subtitle: "Follow the footsteps of a global sensation - From ancient temples to modern megacities in an epic journey across China"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "15 days, 14 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Shanghai Bund, Beijing Forbidden City, Shaolin Temple, Chengdu Panda Base, Chongqing Liziba Station, Hong Kong Victoria Peak, Shenzhen Huaqiangbei, Changsha IFS"
+price: "$3,200"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/routes/couple-1/r1-shanghai.jpg",
+  "/images/routes/couple-1/r1-beijing.jpg", 
+  "/images/routes/couple-1/r1-shaolin.jpg"
+]
 ---
 
 This route takes you through the trending spots made famous abroad by global YouTuber @IShowSpeed.  

@@ -1,0 +1,71 @@
+---
+interface Props {
+	tourType?: string;
+	guideDriver?: string;
+	duration?: string;
+	hotel?: string;
+	attractions?: string;
+	price?: string;
+	whatsappNumber?: string;
+	whatsappBusinessLink?: string;
+}
+
+const {
+	tourType = "Private tour, any part of the itinerary can be customized",
+	guideDriver = "Bilingual guide, experienced driver with an air-conditioned vehicle",
+	duration = "10 days, 9 nights",
+	hotel = "5-star hotels throughout the trip",
+	attractions = "列举guide里面的景点",
+	price = "$100",
+	whatsappNumber = "447410419832",
+	whatsappBusinessLink = "https://wa.me/message/TBWKHP7ZOLH3M1"
+} = Astro.props;
+
+// 优先使用Business链接，如果没有则使用普通WhatsApp链接
+const whatsappUrl = whatsappBusinessLink || `https://wa.me/${whatsappNumber}`;
+---
+
+<div class="tour-info my-8">
+	<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+		<!-- Left side - Tour information -->
+		<div class="flex-1 space-y-4">
+			<div class="flex items-start">
+				<span class="font-semibold text-gray-700 min-w-[120px]">Tour Type:</span>
+				<span class="text-gray-600 ml-2">{tourType}</span>
+			</div>
+			
+			<div class="flex items-start">
+				<span class="font-semibold text-gray-700 min-w-[120px]">Guide & Driver:</span>
+				<span class="text-gray-600 ml-2">{guideDriver}</span>
+			</div>
+			
+			<div class="flex items-start">
+				<span class="font-semibold text-gray-700 min-w-[120px]">Duration:</span>
+				<span class="text-gray-600 ml-2">{duration}</span>
+			</div>
+			
+			<div class="flex items-start">
+				<span class="font-semibold text-gray-700 min-w-[120px]">Hotel:</span>
+				<span class="text-gray-600 ml-2">{hotel}</span>
+			</div>
+			
+			<div class="flex items-start">
+				<span class="font-semibold text-gray-700 min-w-[120px]">Attractions:</span>
+				<span class="text-gray-600 ml-2">{attractions}</span>
+			</div>
+		</div>
+		
+		<!-- Right side - Price and button -->
+		<div class="mt-6 lg:mt-0 lg:ml-8 lg:flex lg:flex-col lg:items-end">
+			<div class="text-3xl font-bold text-sky-600 mb-4">{price}</div>
+			<a 
+				href={whatsappUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl uppercase"
+			>
+				Free Inquiry
+			</a>
+		</div>
+	</div>
+</div> 

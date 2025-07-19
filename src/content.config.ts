@@ -9,7 +9,7 @@ const routes = defineCollection({
 		pattern: "**/[^_]*.{md,mdx}",
 		base: "./src/data/routes",
 	}),
-	schema: ({ image }) =>
+			schema: ({ image }) =>
 		z.object({
 			title: z.string(),
 			description: z.string(),
@@ -19,6 +19,17 @@ const routes = defineCollection({
 			// Transform string to Date object
 			date: z.coerce.date().optional(),
 			order: z.number(),
+			// Tour information fields
+			subtitle: z.string().optional(),
+			tourType: z.string().optional(),
+			guideDriver: z.string().optional(),
+			duration: z.string().optional(),
+			hotel: z.string().optional(),
+			attractions: z.string().optional(),
+			price: z.string().optional(),
+			whatsappNumber: z.string().optional(),
+			whatsappBusinessLink: z.string().optional(),
+			bannerImages: z.array(z.string()).optional(),
 			// will be excluded from build if draft is "true"
 			draft: z.boolean().optional(),
 		}),
@@ -30,7 +41,7 @@ const destinations = defineCollection({
 		pattern: "**/[^_]*.{md,mdx}",
 		base: "./src/data/destinations",
 	}),
-	schema: ({ image }) =>
+			schema: ({ image }) =>
 		z.object({
 			title: z.string(),
 			description: z.string(),
@@ -39,6 +50,17 @@ const destinations = defineCollection({
 			features: z.array(z.string()).optional(),
 			order: z.number(),
 			featured: z.boolean().optional(),
+			// Tour information fields
+			subtitle: z.string().optional(),
+			tourType: z.string().optional(),
+			guideDriver: z.string().optional(),
+			duration: z.string().optional(),
+			hotel: z.string().optional(),
+			attractions: z.string().optional(),
+			price: z.string().optional(),
+			whatsappNumber: z.string().optional(),
+			whatsappBusinessLink: z.string().optional(),
+			bannerImages: z.array(z.string()).optional(),
 			// will be excluded from build if draft is "true"
 			draft: z.boolean().optional(),
 		}),

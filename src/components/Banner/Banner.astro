@@ -1,0 +1,76 @@
+---
+interface Props {
+	images?: string[];
+	alt?: string;
+}
+
+const { 
+	images = [
+		"/images/cosmic-themes-logo 20.36.33.png",
+		"/images/cosmic-themes-logo 20.36.33.png", 
+		"/images/cosmic-themes-logo 20.36.33.png"
+	],
+	alt = "Banner images"
+} = Astro.props;
+---
+
+<div class="banner-container my-8 overflow-hidden bg-gray-50 py-4">
+	<div class="banner-scroll flex gap-4 animate-scroll">
+		{images.map((image, index) => (
+			<div class="banner-item flex-shrink-0">
+				<div class="relative group">
+					<img 
+						src={image} 
+						alt={`${alt} ${index + 1}`}
+						class="h-72 w-96 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		))}
+		{/* Duplicate images for seamless loop */}
+		{images.map((image, index) => (
+			<div class="banner-item flex-shrink-0">
+				<div class="relative group">
+					<img 
+						src={image} 
+						alt={`${alt} ${index + 1}`}
+						class="h-72 w-96 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		))}
+	</div>
+</div>
+
+<style>
+	.banner-container {
+		max-height: 20rem; /* 320px, increased for larger images */
+	}
+	
+	.banner-scroll {
+		animation: scroll 30s linear infinite;
+	}
+	
+	.banner-scroll:hover {
+		animation-play-state: paused;
+	}
+	
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.banner-item img {
+			height: 15rem; /* 240px */
+			width: 20rem; /* 320px - 4:3 ratio */
+		}
+	}
+</style> 

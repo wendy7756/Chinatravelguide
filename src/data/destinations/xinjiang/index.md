@@ -9,11 +9,27 @@ features:
   - "Heavenly Lake of Tianshan – A serene alpine lake cradled by snowy mountains, perfect year-round."
   - "Kanas Lake – A mystical lake famed for legends and fairy-tale scenery."
   - "Taklamakan Desert – China's largest desert; experience vast dunes and golden silence."
+# Tour Information
+subtitle: "Discover the Silk Road's hidden gems - From alpine lakes to desert adventures in China's most diverse region"
+tourType: "Private tour, any part of the itinerary can be customized"
+guideDriver: "Bilingual guide, experienced driver with an air-conditioned vehicle"
+duration: "7 days, 6 nights"
+hotel: "5-star hotels throughout the trip"
+attractions: "Heavenly Lake of Tianshan, Kanas Lake, Taklamakan Desert, Kashgar Old City, Turpan Grape Valley, Flaming Mountains"
+price: "$1,800"
+whatsappNumber: "447410419832"
+whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
+# Banner Images (optional - if not provided, will use default images)
+bannerImages: [
+  "/images/destinations/xinjiang/xinjiang01.jpg",
+  "/images/destinations/xinjiang/xinjiang02.jpg", 
+  "/images/destinations/xinjiang/xinjiang03.jpg"
+]
 ---
 
 Xinjiang, China's largest autonomous region, offers an incredible diversity of landscapes from snow-capped mountains to vast deserts, alpine lakes to ancient Silk Road cities. This frontier region promises adventures that span cultures, cuisines, and natural wonders.
 
- ##🏔️ Heavenly Lake of Tianshan 天山天池
+ ## 🏔️ Heavenly Lake of Tianshan 天山天池
 
 Nestled in the Tianshan Mountains at 1,910 meters above sea level, this alpine lake mirrors the surrounding snow-capped peaks. Legend says it's the bathing pool of the Queen Mother of the West. The crystal-clear waters and pristine mountain air make it a perfect escape from city life.
 

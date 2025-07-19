@@ -2,6 +2,9 @@
 import Contact from "@components/Contact/Contact.astro";
 import RouteImage from "@components/RouteImage/RouteImage.astro";
 import RouteGrid from "@components/Route/RouteGrid.astro";
+import TourInfo from "@components/TourInfo/TourInfo.astro";
+import Banner from "@components/Banner/Banner.astro";
+import FloatingButtons from "@components/FloatingButtons/FloatingButtons.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 
@@ -14,13 +17,20 @@ interface Props {
 
 
 const { route } = Astro.props as Props;
-const { title, description, heroImage } = route.data;
+const { title, description, heroImage, subtitle, tourType, guideDriver, duration, hotel, attractions, price, whatsappNumber, whatsappBusinessLink, bannerImages } = route.data;
 
 // find other routes to show later down the page
 const otherRoutes = await getCollection("routes", (otherRoute) => {
 	// filter out draft pages
 	return otherRoute.data.draft !== true && otherRoute.id !== route.id;
 });
+
+// 使用路线特定的Banner图片，如果没有则使用默认图片
+const bannerImageList = bannerImages || [
+	"/images/cosmic-themes-logo 20.36.33.png",
+	"/images/cosmic-themes-logo 20.36.33.png",
+	"/images/cosmic-themes-logo 20.36.33.png"
+];
 ---
 
 <BaseLayout
@@ -53,9 +63,35 @@ const otherRoutes = await getCollection("routes", (otherRoute) => {
 	</div>
 
 	<article class="mx-auto mt-12 px-4 md:mt-20 md:max-w-6xl">
-		<h1 class="h1 description mt-4 text-center uppercase">
+		<h1 class="h1 text-black mt-4 text-center uppercase">
 			{title}
 		</h1>
+
+		{subtitle && (
+			<div class="mt-6 mb-8">
+				<p class="text-lg font-heading-1 mt-4 text-center font-bold">
+					{subtitle}
+				</p>
+			</div>
+		)}
+
+		<!-- Tour Information Section -->
+		<TourInfo 
+			tourType={tourType}
+			guideDriver={guideDriver}
+			duration={duration}
+			hotel={hotel}
+			attractions={attractions}
+			price={price}
+			whatsappNumber={whatsappNumber}
+			whatsappBusinessLink={whatsappBusinessLink}
+		/>
+
+		<!-- Banner Section -->
+		<Banner 
+			images={bannerImageList}
+			alt="Travel destination highlights"
+		/>
 
 		<!-- slot really only fuctions as a longer description -->
 		<div class="markdown-content description mt-6 text-pretty md:text-lg">
@@ -70,4 +106,7 @@ const otherRoutes = await getCollection("routes", (otherRoute) => {
 	</section>
 	
 	<Contact class="mt-12" />
+
+	<!-- Floating Buttons -->
+	<FloatingButtons whatsappLink={whatsappBusinessLink} />
 </BaseLayout>
