@@ -16,11 +16,11 @@ export interface SiteDataProps {
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "WanderWorld",
+	name: "WonderChina",
 	// Your website's title and description (meta fields)
-	title: "Authentic Travel Guides Around the World",
+	title: "Authentic Travel Guides Around China",
 	description:
-		"Explore the diverse beauty and rich cultures across the globe.",
+		"Explore the diverse beauty and rich cultures across China.",
 	useViewTransitions: true,
 	// Your information!
 	author: {

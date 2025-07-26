@@ -11,6 +11,9 @@ const routes = await getCollection("routes", ({ data }) => {
 	// filter out draft pages
 	return data.draft !== true;
 });
+
+// Sort routes by order field
+const sortedRoutes = routes.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="Routes" description="Route page for my projects and work.">
@@ -20,7 +23,7 @@ const routes = await getCollection("routes", ({ data }) => {
 				Themed travel routes beyond the scenery. <br />
 			</h1>
 		</div>
-		<RouteGrid routes={routes} />
+		<RouteGrid routes={sortedRoutes} />
 	</div>
 
 

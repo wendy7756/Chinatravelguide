@@ -1,6 +1,6 @@
 ---
 title: Terms & Conditions
-description: Welcome to wanderworld! Please read these Terms and Conditions carefully before using our services.
+description: Welcome to wanderChina! Please read these Terms and Conditions carefully before using our services.
 ---
 
 _Last updated on June 8, 2025_

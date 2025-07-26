@@ -1,6 +1,6 @@
-# 🌏 Global Travel Guide (localtravelguide.fun)
+# 🇨🇳 China Travel Guide (localtravelguide.fun)
 
-Welcome to **Global Travel Guide** – a global, community-powered website for sharing local travel experiences.
+Welcome to **China Travel Guide** – a China-focused, community-powered website for sharing local travel experiences.
 
 Whether you're a traveler, digital nomad, or local explorer, you can **publish your own travel pages** and inspire others with your unique tips and stories.
 
@@ -16,7 +16,7 @@ Whether you're a traveler, digital nomad, or local explorer, you can **publish y
 - 🌐 Supports multilingual pages (starting with English & Chinese)
 - 📸 Built-in layout for attractions, food, culture, and itineraries
 - 🧩 Powered by [Astro](https://astro.build) — fast, modern site framework
-- 📝 Open to global contributors – build your own travel page!
+- 📝 Open to China contributors – build your own travel page!
 
 ---
 
@@ -147,4 +147,4 @@ We’d love to see your city, culture, and favorite local places featured on the
 
 ⸻
 
-⭐ Star this repo to support global open travel knowledge!
+⭐ Star this repo to support China open travel knowledge!

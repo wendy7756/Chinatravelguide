@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import Contact from "@components/Contact/Contact.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+	const stories = await getCollection("stories");
+	return stories.map((story) => ({
+		params: { slug: story.id },
+		props: story,
+	}));
+}
+
+const story = Astro.props;
+const { Content } = await story.render();
+---
+
+<BaseLayout title={story.data.title} description={story.data.description}>
+	<div class="relative">
+		<!-- Hero Section -->
+		<div class="relative h-[60vh] md:h-[70vh] overflow-hidden">
+			<img
+				src={story.data.heroImage.src}
+				alt={story.data.title}
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-black/40"></div>
+			<div class="absolute inset-0 flex items-center justify-center">
+				<div class="text-center text-white max-w-4xl px-4">
+					<h1 class="text-4xl md:text-6xl font-bold mb-4">
+						{story.data.title}
+					</h1>
+					<p class="text-xl md:text-2xl font-light">
+						{story.data.description}
+					</p>
+					{story.data.location && (
+						<p class="text-lg mt-2 opacity-90">
+							📍 {story.data.location}
+						</p>
+					)}
+				</div>
+			</div>
+		</div>
+
+		<!-- Content Section -->
+		<div class="site-container py-16">
+			<div class="mx-auto max-w-4xl">
+				<div class="prose prose-lg max-w-none">
+					<Content />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<Contact class="mt-12" />
+</BaseLayout> 

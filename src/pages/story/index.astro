@@ -1,0 +1,44 @@
+---
+// components
+import Contact from "@components/Contact/Contact.astro";
+import DestinationGrid from "@components/Destination/DestinationGrid.astro";
+import About from "@components/About/About.astro";
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const stories = await getCollection("stories", ({ data }) => {
+	// filter out draft pages
+	return data.draft !== true;
+});
+
+// Sort stories by order
+const sortedStories = stories.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Travel Stories" description="Explore my personal travel stories across China's provinces and cities.">
+	<div class="site-container pt-24 md:pt-36">
+		<div class="mx-auto max-w-6xl text-center">
+			<h1 class="h2 text-pretty uppercase">
+				My Travel Stories <br />
+			</h1>
+			<p class="mt-4 text-lg text-base-600 max-w-3xl mx-auto">
+				Join me on my adventures across China's diverse provinces and cities. Each destination has its own unique charm and unforgettable memories.
+			</p>
+		</div>
+
+		<!-- Personal Introduction Section -->
+		<div class="mt-12">
+			<About />
+		</div>
+
+		<!-- Stories Grid -->
+		<div class="mt-16">
+			<h2 class="h3 text-center mb-8">Provincial Adventures</h2>
+			<DestinationGrid destinations={sortedStories} />
+		</div>
+	</div>
+
+	<Contact class="mt-12" />
+</BaseLayout> 

@@ -1,6 +1,6 @@
 # 🌍 Contributing to Local Travel Guide
 
-We're excited to welcome your travel stories from around the world!  
+We're excited to welcome your travel stories from around China!  
 You can contribute a city guide, day route, cultural experience, food trail, or anything meaningful.
 
 ---
@@ -59,4 +59,4 @@ By contributing:
 🤝 Need Help?
 
 Open an Issue or email us.
-Thank you for building a global travel community!
+Thank you for building a China travel community!

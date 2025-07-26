@@ -68,6 +68,27 @@ const destinations = defineCollection({
 
 // testimonials - removed
 
+// stories
+const stories = defineCollection({
+	loader: glob({
+		pattern: "**/[^_]*.{md,mdx}",
+		base: "./src/data/stories",
+	}),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			heroImage: image(),
+			location: z.string().optional(),
+			order: z.number(),
+			featured: z.boolean().optional(),
+			// Transform string to Date object
+			date: z.coerce.date().optional(),
+			// will be excluded from build if draft is "true"
+			draft: z.boolean().optional(),
+		}),
+});
+
 // other pages
 const otherPages = defineCollection({
 	// type: "content",
@@ -86,5 +107,6 @@ const otherPages = defineCollection({
 export const collections = {
 	routes,
 	destinations,
+	stories,
 	otherPages,
 };

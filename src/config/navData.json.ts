@@ -23,25 +23,11 @@ const navConfig: navItem[] = [
 	},
 	{
 		text: "Destinations",
-		link: "/#destination",
+		link: "/destination/",
 	},
 	{
-		text: "Pages",
-		dropdown: [
-			{
-				text: "Tips",
-				link: "/tools/",
-			},
-			{
-				text: "Privacy",
-				link: "/privacy-policy/",
-			},
-			{
-				text: "Terms",
-				link: "/terms-of-use/",
-			},
-
-		],
+		text: "Stories",
+		link: "/story/",
 	},
 ];
 
