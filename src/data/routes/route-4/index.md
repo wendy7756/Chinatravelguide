@@ -2,7 +2,7 @@
 title: Spotlight on Jiangsu's 13 Cities
 description: A cultural journey across Jiangsu's 13 cities—highlighting heritage, cuisine, and local rivalry.
 heroImage: ./r2-football.jpg
-order: 2
+order: 4
 # Tour Information
 subtitle: "Uncover the cultural treasures of Jiangsu - Where ancient gardens, modern innovation, and culinary excellence converge"
 tourType: "Private tour, any part of the itinerary can be customized"
@@ -15,9 +15,9 @@ whatsappNumber: "447410419832"
 whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
 # Banner Images (optional - if not provided, will use default images)
 bannerImages: [
-  "/images/routes/couple-2/r2-nanjing.jpg",
-  "/images/routes/couple-2/r2-suzhou.jpg", 
-  "/images/routes/couple-2/r2-wuxi.jpg"
+  "/images/routes/route-4/r2-nanjing.jpg",
+  "/images/routes/route-4/r2-suzhou.jpg",
+  "/images/routes/route-4/r2-wuxi.jpg"
 ]
 ---
   

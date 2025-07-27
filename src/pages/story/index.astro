@@ -1,12 +1,14 @@
 ---
 // components
-import Contact from "@components/Contact/Contact.astro";
 import DestinationGrid from "@components/Destination/DestinationGrid.astro";
-import About from "@components/About/About.astro";
 
 // layout
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Import avatar image
+import photographerImage from "@assets/images/photographer-min.jpg";
 
 const stories = await getCollection("stories", ({ data }) => {
 	// filter out draft pages
@@ -19,26 +21,47 @@ const sortedStories = stories.sort((a, b) => a.data.order - b.data.order);
 
 <BaseLayout title="Travel Stories" description="Explore my personal travel stories across China's provinces and cities.">
 	<div class="site-container pt-24 md:pt-36">
-		<div class="mx-auto max-w-6xl text-center">
-			<h1 class="h2 text-pretty uppercase">
-				My Travel Stories <br />
+		<!-- Header Section -->
+		<div class="mx-auto max-w-6xl text-center mb-12">
+			<h1 class="h2 text-pretty uppercase mb-4">
+				Travel Memory
 			</h1>
-			<p class="mt-4 text-lg text-base-600 max-w-3xl mx-auto">
-				Join me on my adventures across China's diverse provinces and cities. Each destination has its own unique charm and unforgettable memories.
-			</p>
+			<h2 class="text-xl md:text-2xl text-base-600 font-medium uppercase tracking-wide">
+				My Journey Across China (31/34 Provinces)
+			</h2>
 		</div>
 
-		<!-- Personal Introduction Section -->
-		<div class="mt-12">
-			<About />
+		<!-- Personal Introduction -->
+		<div class="mx-auto max-w-4xl">
+			<div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+				<!-- Avatar -->
+				<div class="flex-shrink-0">
+					<div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary-200">
+						<Image
+							src={photographerImage}
+							alt="Wendy"
+							width={160}
+							height={160}
+							densities={[1.5, 2]}
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				</div>
+				
+				<!-- Introduction Text -->
+				<div class="flex-1 text-left">
+					<div class="text-lg md:text-xl text-base-700 leading-relaxed">
+						<p>
+							Hi, I'm Wendy! I graduated from a US News Top 100 university and absolutely love traveling. Here are my travel memories and discoveries from each incredible destination.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Stories Grid -->
-		<div class="mt-16">
-			<h2 class="h3 text-center mb-8">Provincial Adventures</h2>
+		<div class="mt-8">
 			<DestinationGrid destinations={sortedStories} />
 		</div>
 	</div>
-
-	<Contact class="mt-12" />
 </BaseLayout> 

@@ -15,9 +15,9 @@ whatsappNumber: "447410419832"
 whatsappBusinessLink: "https://wa.me/message/TBWKHP7ZOLH3M1"
 # Banner Images (optional - if not provided, will use default images)
 bannerImages: [
-  "/images/routes/couple-3/r3-dunhuang.jpg",
-  "/images/routes/couple-3/r3-xian.jpg", 
-  "/images/routes/couple-3/r3-zhangye.jpg"
+  "/images/routes/route-3/r3-dunhuang.jpg",
+  "/images/routes/route-3/r3-xian.jpg", 
+  "/images/routes/route-3/r3-zhangye.jpg"
 ]
 ---
 

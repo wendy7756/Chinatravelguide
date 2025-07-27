@@ -24,8 +24,8 @@ const navConfig: navItem[] = [
 	{
 		text: "Destinations",
 		link: "/destination/",
-	},
-	{
+			},
+			{
 		text: "Stories",
 		link: "/story/",
 	},

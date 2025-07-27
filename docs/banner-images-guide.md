@@ -23,12 +23,12 @@
 ```
 src/data/
 ├── routes/
-│   ├── couple-1/
+│   ├── route-1/
 │   │   ├── index.md
 │   │   ├── r1-shanghai.jpg      # Banner图片1
 │   │   ├── r1-beijing.jpg       # Banner图片2
 │   │   └── r1-shaolin.jpg       # Banner图片3
-│   └── couple-2/
+│   └── route-2/
 │       ├── index.md
 │       └── [banner-images].jpg
 └── destinations/
@@ -58,9 +58,9 @@ heroImage: ./hero-image.jpg
 
 # Banner图片配置（可选）
 bannerImages: [
-  "/images/routes/couple-1/banner-1.jpg",
-  "/images/routes/couple-1/banner-2.jpg", 
-  "/images/routes/couple-1/banner-3.jpg"
+  "/images/routes/route-1/banner-1.jpg",
+  "/images/routes/route-1/banner-2.jpg", 
+  "/images/routes/route-1/banner-3.jpg"
 ]
 ---
 ```
@@ -71,7 +71,7 @@ bannerImages: [
 
 ## 📝 示例配置
 
-### **路线示例（couple-1）**
+### **路线示例（route-1）**
 
 ```yaml
 ---
@@ -82,9 +82,9 @@ heroImage: ./r1-ispeedshow.jpg
 
 # Banner图片 - 使用路线中的景点图片
 bannerImages: [
-  "/images/routes/couple-1/r1-shanghai.jpg",    # 上海外滩
-  "/images/routes/couple-1/r1-beijing.jpg",     # 北京故宫
-  "/images/routes/couple-1/r1-shaolin.jpg"      # 少林寺
+  "/images/routes/route-1/r1-shanghai.jpg",    # 上海外滩
+  "/images/routes/route-1/r1-beijing.jpg",     # 北京故宫
+  "/images/routes/route-1/r1-shaolin.jpg"      # 少林寺
 ]
 ---
 ```

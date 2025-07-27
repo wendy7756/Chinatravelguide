@@ -6,43 +6,43 @@
 
 ## 🗺️ 路线配置详情
 
-### **1. IShowSpeed's China Route (couple-1)**
+### **1. IShowSpeed's China Route (route-1)**
 - **路线主题**：跟随YouTuber IShowSpeed的中国之旅
 - **Banner图片**：
-  - `/images/routes/couple-1/r1-shanghai.jpg` - 上海外滩
-  - `/images/routes/couple-1/r1-beijing.jpg` - 北京故宫
-  - `/images/routes/couple-1/r1-shaolin.jpg` - 少林寺
+  - `/images/routes/route-1/r1-shanghai.jpg` - 上海外滩
+  - `/images/routes/route-1/r1-beijing.jpg` - 北京故宫
+  - `/images/routes/route-1/r1-shaolin.jpg` - 少林寺
 - **图片特色**：现代都市与传统文化相结合
 
-### **2. Spotlight on Jiangsu's 13 Cities (couple-2)**
+### **2. Spotlight on Jiangsu's 13 Cities (route-2)**
 - **路线主题**：江苏十三市文化之旅
 - **Banner图片**：
-  - `/images/routes/couple-2/r2-nanjing.jpg` - 南京中山陵
-  - `/images/routes/couple-2/r2-suzhou.jpg` - 苏州园林
-  - `/images/routes/couple-2/r2-wuxi.jpg` - 无锡太湖
+  - `/images/routes/route-2/r2-nanjing.jpg` - 南京中山陵
+  - `/images/routes/route-2/r2-suzhou.jpg` - 苏州园林
+  - `/images/routes/route-2/r2-wuxi.jpg` - 无锡太湖
 - **图片特色**：江南水乡文化与园林艺术
 
-### **3. China's Silk Road Route (couple-3)**
+### **3. China's Silk Road Route (route-3)**
 - **路线主题**：古丝绸之路探险之旅
 - **Banner图片**：
-  - `/images/routes/couple-3/r3-dunhuang.jpg` - 敦煌莫高窟
-  - `/images/routes/couple-3/r3-xian.jpg` - 西安兵马俑
-  - `/images/routes/couple-3/r3-zhangye.jpg` - 张掖丹霞地貌
+  - `/images/routes/route-3/r3-dunhuang.jpg` - 敦煌莫高窟
+  - `/images/routes/route-3/r3-xian.jpg` - 西安兵马俑
+  - `/images/routes/route-3/r3-zhangye.jpg` - 张掖丹霞地貌
 - **图片特色**：历史古迹与自然奇观
 
 ## 📁 文件结构
 
 ```
 public/images/routes/
-├── couple-1/
+├── route-1/
 │   ├── r1-shanghai.jpg
 │   ├── r1-beijing.jpg
 │   └── r1-shaolin.jpg
-├── couple-2/
+├── route-2/
 │   ├── r2-nanjing.jpg
 │   ├── r2-suzhou.jpg
 │   └── r2-wuxi.jpg
-└── couple-3/
+└── route-3/
     ├── r3-dunhuang.jpg
     ├── r3-xian.jpg
     └── r3-zhangye.jpg
@@ -71,9 +71,9 @@ public/images/routes/
 ### **配置格式**
 ```yaml
 bannerImages: [
-  "/images/routes/couple-1/r1-shanghai.jpg",
-  "/images/routes/couple-1/r1-beijing.jpg", 
-  "/images/routes/couple-1/r1-shaolin.jpg"
+  "/images/routes/route-1/r1-shanghai.jpg",
+  "/images/routes/route-1/r1-beijing.jpg", 
+  "/images/routes/route-1/r1-shaolin.jpg"
 ]
 ```
 
@@ -81,9 +81,9 @@ bannerImages: [
 
 | 路线 | 图片数量 | 总大小 | 状态 |
 |------|----------|--------|------|
-| couple-1 | 3张 | ~3.9MB | ✅ 已配置 |
-| couple-2 | 3张 | ~7.2MB | ✅ 已配置 |
-| couple-3 | 3张 | ~8.7MB | ✅ 已配置 |
+| route-1 | 3张 | ~3.9MB | ✅ 已配置 |
+| route-2 | 3张 | ~7.2MB | ✅ 已配置 |
+| route-3 | 3张 | ~8.7MB | ✅ 已配置 |
 
 ## 🎨 视觉效果
 
@@ -114,9 +114,9 @@ bannerImages: [
 
 ## ✅ 验证清单
 
-- [x] couple-1 路线配置完成
-- [x] couple-2 路线配置完成  
-- [x] couple-3 路线配置完成
+- [x] route-1 路线配置完成
+- [x] route-2 路线配置完成  
+- [x] route-3 路线配置完成
 - [x] 所有图片文件已复制到public目录
 - [x] 路径配置正确
 - [x] 图片显示效果良好
