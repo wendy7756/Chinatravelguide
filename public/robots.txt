@@ -1,1 +1,4 @@
-Sitemap: https://horizon.cosmicthemes.com/sitemap-index.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://www.localtravelguide.fun/sitemap-index.xml
