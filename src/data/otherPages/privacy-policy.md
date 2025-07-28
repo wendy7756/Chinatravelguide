@@ -18,13 +18,13 @@ The only information we collect is through the **contact form** you voluntarily 
 
 This data is used solely to respond to your request and is **not stored beyond what is necessary to reply**.
 
-## No Analytics Tracking
+## Analytics Tracking
 
-We currently **do not use any analytics tools** (such as Google Analytics) that track your personal behavior across sessions.
+We use Google Analytics to understand how our website is used and to improve our content and services. This service may collect information such as your IP address, browser type, and pages visited. This data is aggregated and anonymized, and we do not use it to personally identify you.
 
 ## No Cookies or Tracking Scripts
 
-Our site does **not use cookies** or tracking pixels to collect or analyze visitor data.
+Our site does **not use cookies** or tracking pixels to collect or analyze visitor data beyond the anonymous data collected by Google Analytics.
 
 ## Data Sharing
 
