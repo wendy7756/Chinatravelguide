@@ -1,4 +1,4 @@
-# 🇨🇳 WonderChina Travel Guide
+# 🇨🇳 China Travel Guide
 
 Welcome to **WonderChina** – Your authentic guide to exploring China through real travel experiences!
 
@@ -6,7 +6,7 @@ This website is built on **genuine personal adventures** across China's diverse 
 
 🌐 Visit us at: [https://localtravelguide.fun](https://localtravelguide.fun)
 
-![image](https://github.com/user-attachments/assets/8fe5cd67-e8c9-44c5-bbb4-8148b6a5ca76)
+![WonderChina homepage](./public/images/homepage.jpg)
 
 ---
 
