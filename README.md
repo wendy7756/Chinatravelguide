@@ -1,150 +1,114 @@
-# 🇨🇳 China Travel Guide (localtravelguide.fun)
+# 🇨🇳 WonderChina Travel Guide
 
-Welcome to **China Travel Guide** – a China-focused, community-powered website for sharing local travel experiences.
+Welcome to **WonderChina** – Your authentic guide to exploring China through real travel experiences!
 
-Whether you're a traveler, digital nomad, or local explorer, you can **publish your own travel pages** and inspire others with your unique tips and stories.
+This website is built on **genuine personal adventures** across China's diverse landscapes, from bustling megacities to remote villages, ancient temples to modern marvels. Whether you're planning your first trip to China or you're a seasoned traveler looking for hidden gems, you'll find practical insights and inspiring stories here.
 
-🌐 Live site: [https://localtravelguide.fun](https://localtravelguide.fun)
+🌐 Visit us at: [https://localtravelguide.fun](https://localtravelguide.fun)
 
 ![image](https://github.com/user-attachments/assets/8fe5cd67-e8c9-44c5-bbb4-8148b6a5ca76)
 
 ---
 
-## ✨ Key Features
+## ✨ What Makes Us Different
 
-- 🧭 Curated travel guides by city, theme, or route
-- 🌐 Supports multilingual pages (starting with English & Chinese)
-- 📸 Built-in layout for attractions, food, culture, and itineraries
-- 🧩 Powered by [Astro](https://astro.build) — fast, modern site framework
-- 📝 Open to China contributors – build your own travel page!
-
----
-
-## 🧑‍💻 How to Contribute
-
-We welcome everyone to share their own **local or international travel experiences**!
-
-You can contribute by:
-- Creating a new guide page (in Markdown or Astro format)
-- Sharing photos, travel tips, food spots, or full-day itineraries
-- Improving existing pages or translating them
-
-> ✍ **Please only submit original content** or content you have the legal rights to share.
-
-### ✅ Content Requirements
-- Content must be **original** and not copied from other websites, books, or commercial sources.
-- Images must be your own or clearly credited with permission/license.
-- You retain your copyright, but grant the project a license to display it.
+- 🗺️ **Real Experiences**: Every destination featured has been personally visited and explored
+- 🍜 **Local Insights**: Authentic food recommendations, cultural tips, and insider knowledge
+- 🚄 **Practical Guides**: Detailed itineraries with transportation, timing, and budget information
+- 🌏 **Bilingual Content**: Accessible to both international visitors and Chinese travelers
+- 📱 **Modern Design**: Fast-loading, mobile-friendly website built with [Astro](https://astro.build)
 
 ---
 
-## ⚠️ Legal Disclaimer
+## 🧭 Explore China With Us
 
-By submitting content to this project, you confirm that:
-- You **own the rights** to the materials you upload (text, images, etc.);
-- You **understand and accept** that your contributions may be published and distributed under an open license;
-- You agree that the project developers and maintainers are **not liable** for any content-related legal issues (e.g., copyright, defamation, or privacy violations) arising from your submission.
+### 🎯 Themed Routes
+Follow curated journeys like the **IShowSpeed China Adventure**, **Silk Road Expedition**, or **Giant Panda Discovery Tour** – each route tells a story while providing practical travel information.
 
-The maintainers reserve the right to remove any content at their discretion.
+### 🏛️ Destinations by Region
+From the **roof of the world in Tibet** to the **heavenly lakes of Xinjiang**, discover China's incredible diversity through detailed regional guides.
 
----
-
-## 🛠 Tech Stack
-
-- Framework: [Astro](https://astro.build)
-- Deployment: [Netlify](https://netlify.com)
-- Styling: CSS Modules / Global Styles
-- Content: Markdown + Astro pages
-- Future-proof: Open to CMS or i18n extensions
+### 📖 Personal Travel Stories
+Read about real adventures, unexpected discoveries, and cultural moments that make each journey memorable.
 
 ---
 
-## 📁 Project Structure
-<pre>
+## 👩‍🎓 About the Creator
 
-    \`\`\`
-    ## 📁 Project Structure
-    .
-    ├── public/          # Static assets (images, favicons)
-    ├── src/
-    │   ├── pages/       # Route-based content (guides, index)
-    │   ├── components/  # UI components (Hero, layout blocks)
-    │   ├── layouts/     # Page templates
-    │   ├── data/        # Structured data (content: routes, destinations)
-    │   └── styles/      # Global styles
-    ├── package.json     # NPM dependencies
-    └── astro.config.mjs # Astro config
-    \`\`\`
+Hi, I'm **Wendy**! 👋
 
-</pre>
+- 🎓 Graduate of a **US News Top 100 university**
+- 🗣️ **Fluent English speaker** (TOEFL 101, IELTS 7.5)
+- ✈️ **10+ years of travel experience** across China
+- 📸 **Photography enthusiast** with an eye for capturing China's beauty
+- 🌟 **Professional travel guide** passionate about sharing authentic experiences
 
+I've personally visited **31 out of 34 provinces** in China, from the bustling streets of Shanghai to the serene temples of Tibet. Every guide on this website comes from my real adventures, mistakes I've made, and amazing discoveries along the way.
 
 ---
 
-## 🚀 Quick Start
+## 🎯 Our Mission
 
-Clone the repo and run locally:
+**To bridge cultures through authentic travel experiences**
 
-```bash
-git clone https://github.com/wendy7756/travelguide.git
-cd travelguide
-npm install
+Whether you're:
+- 🌍 **An international visitor** planning your first trip to China
+- 🇨🇳 **A Chinese traveler** looking to explore your own country deeper
+- 🎒 **An experienced adventurer** seeking off-the-beaten-path destinations
+- 🍜 **A food lover** wanting to taste authentic regional cuisines
 
-# Configure environment variables (optional)
-cp .env.example .env
-# Edit .env file to add your Google AdSense client ID
+You'll find valuable, tested advice that goes beyond typical tourist information.
 
-npm run dev
-```
+---
 
-Build for production:
-```bash
-npm run build
-```
+## 🌟 What You'll Find Here
 
-Preview build locally:
-```bash
-npm run preview
-```
+### 📍 **Detailed City Guides**
+- Transportation tips and local customs
+- Hidden gems known only to locals  
+- Best times to visit each destination
+- Budget breakdowns and practical advice
 
-## 💰 Google AdSense Configuration (Optional)
+### 🍽️ **Authentic Food Experiences**
+- Regional specialties and where to find them
+- Street food safety and etiquette
+- Restaurant recommendations from hole-in-the-wall to fine dining
 
-This project supports Google AdSense integration for monetization. If you want to enable ads:
+### 🏛️ **Cultural Insights**
+- Historical context that brings destinations to life
+- Local customs and respectful travel practices
+- Language tips and useful phrases
 
-1. **Get your AdSense Client ID**:
-   - Sign up at [Google AdSense](https://www.google.com/adsense/)
-   - Get your publisher ID (format: `ca-pub-XXXXXXXXXXXXXXXX`)
+### 📱 **Modern Travel Tech**
+- Apps that work in China
+- Payment methods and digital tools
+- Internet access and VPN considerations
 
-2. **Configure Environment Variables**:
-   ```bash
-   cp .env.example .env
-   ```
-   
-3. **Edit `.env` file**:
-   ```
-   PUBLIC_ADSENSE_CLIENT=ca-pub-YOUR-ADSENSE-ID
-   ```
+---
 
-4. **Deploy and Verify**:
-   - Deploy your site
-   - Verify site ownership in AdSense dashboard
-   - Enable Auto Ads in your AdSense account
+## 💬 Get in Touch
 
-> **⚠️ Important for Open Source**: The `.env` file is gitignored to prevent sharing your AdSense ID. Each developer should configure their own AdSense account.
+Have questions about traveling in China? Need personalized advice for your trip?
 
-📜 License
+📧 **Email**: wendy7756@outlook.com  
+💬 **WhatsApp**: Join our travel community for instant tips and advice
 
-This project is licensed under the MIT License.
-User-submitted content remains the responsibility of the contributor.
-The project maintainers disclaim all liability for any uploaded materials.
+I offer **FREE consultations** to help you plan your perfect China adventure!
 
-⸻
+---
 
-💬 Questions or Feedback?
+## 🛠 Technical Details
 
-Feel free to open an Issue or start a discussion.
-We’d love to see your city, culture, and favorite local places featured on the site!
+This website is built with modern web technologies for the best user experience:
 
-⸻
+- ⚡ **Astro framework** for lightning-fast loading
+- 📱 **Mobile-responsive design** 
+- 🌐 **Bilingual support** (English & Chinese)
+- 🔍 **SEO optimized** for better discoverability
+- 📊 **Analytics enabled** to continuously improve content
 
-⭐ Star this repo to support China open travel knowledge!
+---
+
+*Last updated: January 2025*
+
+**🌟 Start your China adventure today – explore, discover, and fall in love with this incredible country!**
